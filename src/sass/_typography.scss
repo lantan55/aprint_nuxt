@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap&subset=cyrillic');
+
+// @font-face{
+//     font-family: 'Futura';
+//     src: url('./assets/fonts/aFuturaRound/a_futuraround.eot');
+//     // src: url('../assets/fonts/aFuturaRound/a_futuraround.eot?iefix') format('eot'),
+//     //     url('../assets/fonts/aFuturaRound/a_futuraround.woff') format('woff'),
+//     //     url('../assets/fonts/aFuturaRound/a_futuraround.ttf') format('truetype'),
+//     //     url('../assets/fonts/aFuturaRound/a_futuraround.svg#webfont') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+@font-face {
+	font-family: 'a_FuturaRound';
+	src: url('/assets/fonts/a_futuraround.eot'); /* IE 9 Compatibility Mode */
+	src: url('/assets/fonts/a_futuraround.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('/assets/fonts/a_futuraround.woff2') format('woff2'), /* Super Modern Browsers */
+		url('/assets/fonts/a_futuraround.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('/assets/fonts/a_futuraround.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('/assets/fonts/a_futuraround.svg#a_futuraround') format('svg'); /* Chrome < 4, Legacy iOS */
+}
