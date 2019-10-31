@@ -7,8 +7,8 @@
         <div class="bar"></div>
       </div>
       <v-row>
-        <v-col md="2" v-for="item in brands" :key="item.id" class="pa-0">
-          <img :src="`http://apprint.spb.ru/${item.img}`" :alt="item.alt" />
+        <v-col md="2" v-for="(item, i) in brands" :key="i" class="pa-0">
+          <img :src="require(`@/${item.img}`)" :alt="item.title" />
         </v-col>
       </v-row>
     </v-container>
@@ -22,18 +22,23 @@ export default {
   },
   computed: {
     brands() {
-      // return this.$store.getters.BRANDS;
+      return this.$store.getters.brands;
     }
   }
 };
 </script>
 <style lang="scss" scoped>
 .partners {
-  padding: 50px 0;
+  padding: 50px 30px;
   border-top: 1px solid #edf5ff;
 }
 img {
-  // filter: grayscale(100%);
-  width: 150px;
+  filter: grayscale(100%);
+  width: 100px;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    filter: grayscale(0);
+  }
 }
 </style>
