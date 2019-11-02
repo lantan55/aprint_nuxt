@@ -1,75 +1,80 @@
 ::-webkit-scrollbar {
-	width: 6px;
-	background-color: #F5F5F5;
+  width: 6px;
+  background-color: #f5f5f5;
 }
 
 ::-webkit-scrollbar-track {
-	border-radius: 5px;
-	background: #f1f1f1; 
-	width: 10px;
+  border-radius: 5px;
+  background: #f1f1f1;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-	background:  var(--v-primary-base); 
-	border-radius: 5px;
-	width: 5px;
+  background: var(--v-primary-base);
+  border-radius: 5px;
+  width: 5px;
 }
 
-.section{
-    padding-bottom: 70px;
-    padding-top: 100px;
+.section {
+  padding-bottom: 70px;
+  padding-top: 100px;
+  background: var(--var-white-base);
+  @media screen and (max-width: 600px) {
+    padding: 10px;
+  }
 }
-.box{
-    max-width: 1200px;
+.section.page {
+  padding-left: 45px;
+  padding-top: 30px;
+  @media screen and (max-width: 600px) {
+    padding: 15px;
+  }
 }
 
-
-p {
-    font-size: 16px;
-    color: #818992;
-    line-height: 1.6;
+.box {
+  max-width: 1200px;
 }
+
 .section-title {
-    text-align: center;
-    max-width: 720px;
-    margin-bottom: 50px;
-    margin-top: -6px;
-    margin-left: auto;
-	margin-right: auto;
-	h2{
-		font-size: 35px;
-    	font-weight: 700;
-    	margin-bottom: 0;
-	}
-	.bar {
-		height: 4px;
-		width: 85px;
-		background: var(--v-primary-base);
-		margin: 20px auto 25px;
-		position: relative;
-		border-radius: 5px;
-		overflow: hidden;
-		&::before {
-			content: '';
-			position: absolute;
-			left: 0;
-			top: 0;
-			height: 100%;
-			width: 5px;
-			background: var(--v-white-base);
-			animation-duration: 2s;
-			animation-timing-function: linear;
-			animation-iteration-count: infinite;
-			animation-name: MOVE-BG;
-		}
-	}
+  text-align: center;
+  max-width: 720px;
+  margin-bottom: 50px;
+  margin-top: -6px;
+  margin-left: auto;
+  margin-right: auto;
+  // h2 {
+  //   font-size: 35px;
+  //   font-weight: 700;
+  //   margin-bottom: 0;
+  // }
+  .bar {
+    height: 4px;
+    width: 85px;
+    background: var(--v-primary-base);
+    margin: 20px auto 25px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 5px;
+      background: var(--v-white-base);
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-name: MOVE-BG;
+    }
+  }
 }
 
-a{
-	transition: 0.3s;
-	&:hover{
-		color: var(--v-primary-base);
-		text-decoration: none;
-		transition: 0.3s;
-	}
+a {
+  transition: 0.3s;
+  &:hover {
+    color: var(--v-primary-base);
+    text-decoration: none;
+  }
 }

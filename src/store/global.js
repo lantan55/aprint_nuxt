@@ -2,7 +2,7 @@ export default {
   state: {
     siteOption: {
       siteName: "Типография Апрель",
-      logo: "assets/img/logo.jpg",
+      logo: "assets/img/logo_aprel.svg",
       phoneBase: "8 812 994-16-47",
       phoneAdd: "",
       mailBase: "info@apprint.ru",

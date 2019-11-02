@@ -33,7 +33,7 @@ export default {
   },
   data: () => ({}),
   mounted() {
-    this.$store.dispatch("getPage", 8);
+    this.$store.dispatch("getPage", 5);
   },
 
   computed: {

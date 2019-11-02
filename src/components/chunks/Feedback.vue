@@ -4,7 +4,7 @@
       <div class="section-title">
         <h2>Заявка на расчет</h2>
         <div class="bar"></div>
-        <p>Отправьте нам запрос на расчет и наши менеджеры в кратчайшие сроки расчитают Ваш заказ. Мы принимаем заказы 24/7.312</p>
+        <p>Отправьте нам запрос на расчет и наши менеджеры в кратчайшие сроки расчитают Ваш заказ. Мы принимаем заказы 24/7</p>
       </div>
       <v-card class="feedback-box">
         <form @submit.prevent="onSubmit">
@@ -14,7 +14,7 @@
             clearable
             outlined
             label="Имя"
-            prepend-icon="fas fa-id-badge"
+            :prepend-icon="this.$vuetify.breakpoint.smAndDown ?  false : 'fas fa-id-badge' "
             type="text"
             v-model="name"
             :error-messages="nameErrors"
@@ -22,6 +22,7 @@
             @input="$v.name.$touch()"
             @blur="$v.name.$touch()"
           ></v-text-field>
+
           <v-text-field
             filled
             color="primary"
@@ -29,7 +30,7 @@
             outlined
             ref="order_email"
             label="Email"
-            prepend-icon="fas fa-envelope"
+            :prepend-icon="this.$vuetify.breakpoint.smAndDown ?  false : 'fas fa-envelope' "
             type="email"
             v-model="email"
             :error-messages="emailErrors"
@@ -44,7 +45,7 @@
             clearable
             outlined
             label="Телефон"
-            prepend-icon="fas fa-phone"
+            :prepend-icon="this.$vuetify.breakpoint.smAndDown ?  false : 'fas fa-phone' "
             type="phone"
             :error-messages="phoneErrors"
             required
@@ -64,7 +65,7 @@
             outlined
             label="Запрос"
             rows="5"
-            prepend-icon="far fa-comment-dots"
+            :prepend-icon="this.$vuetify.breakpoint.smAndDown ?  false : 'far fa-comment-dots' "
           ></v-textarea>
           <p>
             Нажимая на кнопку "Отправить", Вы соглашаетесь с
@@ -138,7 +139,9 @@ export default {
     // 	}
     // }
   },
-  mounted() {},
+  mounted() {
+    console.log(this.$vuetify.breakpoint.smAndDown);
+  },
   computed: {
     // loading() {
     // 	return this.$store.getters.loading;
@@ -174,7 +177,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .feedback {
-  background-color: #edf5ff;
+  // background-color: #edf5ff;
+  padding: 0;
 
   &-box {
     max-width: 600px;
@@ -183,6 +187,9 @@ export default {
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
     background: #ffffff;
     padding: 40px;
+    @media screen and (max-width: 600px) {
+      padding: 15px;
+    }
     text-align: center;
     border-radius: 3px;
   }

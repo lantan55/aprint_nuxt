@@ -6,8 +6,14 @@
         <h2>Наши постоянные клиенты</h2>
         <div class="bar"></div>
       </div>
-      <v-row>
-        <v-col md="2" v-for="(item, i) in brands" :key="i" class="pa-0">
+      <v-row justify="center">
+        <v-col
+          md="2"
+          cols="4"
+          v-for="(item, i) in brands"
+          :key="i"
+          class="d-flex justify-center pa-0"
+        >
           <img :src="require(`@/${item.img}`)" :alt="item.title" />
         </v-col>
       </v-row>
@@ -30,11 +36,18 @@ export default {
 <style lang="scss" scoped>
 .partners {
   padding: 50px 30px;
+  @media screen and (max-width: 600px) {
+    padding: 15px 15px;
+  }
   border-top: 1px solid #edf5ff;
+  background-color: #fff;
 }
 img {
   filter: grayscale(100%);
   width: 100px;
+  @media screen and (max-width: 600px) {
+    width: 50px;
+  }
   transition: 0.3s;
   cursor: pointer;
   &:hover {

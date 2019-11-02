@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap&subset=cyrillic');
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap&subset=cyrillic");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700&display=swap&subset=cyrillic");
 
 // @font-face{
 //     font-family: 'Futura';
@@ -12,11 +13,63 @@
 // }
 
 @font-face {
-	font-family: 'a_FuturaRound';
-	src: url('/assets/fonts/a_futuraround.eot'); /* IE 9 Compatibility Mode */
-	src: url('/assets/fonts/a_futuraround.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
-		url('/assets/fonts/a_futuraround.woff2') format('woff2'), /* Super Modern Browsers */
-		url('/assets/fonts/a_futuraround.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
-		url('/assets/fonts/a_futuraround.ttf') format('truetype'), /* Safari, Android, iOS */
-		url('/assets/fonts/a_futuraround.svg#a_futuraround') format('svg'); /* Chrome < 4, Legacy iOS */
+  font-family: "a_FuturaRound";
+  src: url("/assets/fonts/a_futuraround.eot"); /* IE 9 Compatibility Mode */
+  src: url("/assets/fonts/a_futuraround.eot?#iefix") format("embedded-opentype"),
+    /* IE < 9 */ url("/assets/fonts/a_futuraround.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("/assets/fonts/a_futuraround.woff")
+      format("woff"),
+    /* Firefox >= 3.6, any other modern browser */
+      url("/assets/fonts/a_futuraround.ttf") format("truetype"),
+    /* Safari, Android, iOS */
+      url("/assets/fonts/a_futuraround.svg#a_futuraround") format("svg"); /* Chrome < 4, Legacy iOS */
+}
+h1 {
+  font-size: 2.6em;
+  font-weight: 500;
+  @media screen and (max-width: 600px) {
+    font-size: 2.5em;
+  }
+}
+h2 {
+  font-size: 2.4em;
+  font-weight: 100;
+  @media screen and (max-width: 600px) {
+    font-size: 2em;
+  }
+}
+h3 {
+  font-size: 2.8em;
+  font-weight: 100;
+}
+h4 {
+  font-size: 1.8em;
+  font-weight: 100;
+  @media screen and (max-width: 600px) {
+    font-size: 1.5em;
+  }
+}
+h5 {
+  font-size: 1.8em;
+  font-weight: 100;
+  @media screen and (max-width: 600px) {
+    font-size: 1.2em;
+  }
+}
+
+p {
+  font-size: 16px;
+  color: var(--v-gray-base);
+  line-height: 1.6;
+  @media screen and (max-width: 600px) {
+    font-size: 0.8em;
+  }
+}
+
+a {
+  transition: 0.3s;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
 }

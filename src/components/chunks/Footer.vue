@@ -2,48 +2,27 @@
   <section class="section footer">
     <v-container class="footer-wrapper" fluid>
       <v-row>
-        <v-col md="2" align-self="left">
+        <v-col cols="12" sm="3" align-self="left">
           <v-layout class="footer-list" column>
             <h4>Продукция</h4>
             <ul class="row">
-              <li v-for="(item, i) in productMenu" :key="i" class="col-md-6 col">
-                <a :href="item.href">{{ item.title }}</a>
+              <li v-for="(item, i) in cards" :key="i" class="col-md-6 col-6 col">
+                <router-link :to="item.href">{{ item.title }}</router-link>
               </li>
             </ul>
           </v-layout>
         </v-col>
-        <v-col md="2" align-self="left">
+        <v-col cols="12" sm="3" align-self="left">
           <v-layout class="footer-list" column>
             <h4>Информация</h4>
             <ul class="row">
-              <li class="col-md-6 col">
-                <a href="#">О типографии</a>
-              </li>
-              <li class="col-md-6 col">
-                <a href="#">Доставка</a>
-              </li>
-              <li class="col-md-6 col">
-                <a href="#">Оплата</a>
-              </li>
-              <li class="col-md-6 col">
-                <a href="#">Срочная печать</a>
-              </li>
-              <li class="col-md-6 col">
-                <a href="#">Тех. требования</a>
-              </li>
-              <li class="col-md-6 col">
-                <a href="#">Вопросы и ответы</a>
-              </li>
-              <li class="col-md-6 col">
-                <a href="#">Карта сайта</a>
-              </li>
-              <li class="col-md-6 col">
-                <a href="#">Контакты</a>
+              <li v-for="(item, i) in mainMenu" :key="i" class="col-md-6 col-6 col">
+                <router-link :to="item.href">{{ item.title }}</router-link>
               </li>
             </ul>
           </v-layout>
         </v-col>
-        <v-col md="4" align-self="end">
+        <v-col cols="12" sm="6" align-self="end">
           <v-layout class="footer-list" column>
             <img :src="require(`@/${siteOption.logo}`)" alt />
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident enim eaque odio et nemo qui accusamus quidem laboriosam molestiae! Facere blanditiis, delectus qui quis in distinctio vero dolore recusandae non!</p>
@@ -53,6 +32,17 @@
               </li>
             </ul>
           </v-layout>
+        </v-col>
+      </v-row>
+      <v-row class="copyright" justify="space-between">
+        <v-col cols="12" sm="4" order="2" order-sm="1" class="copyright-text">
+          <p>Copyright @ 2019 Типография «Апрель». Все права защищены.</p>
+        </v-col>
+        <v-col cols="12" sm="4" order="1" order-sm="2" class="copyright-text">
+          <p>
+            <a href="#">Условия и положения</a>
+            <a href="#">Политика конфиденциальности</a>
+          </p>
         </v-col>
       </v-row>
     </v-container>
@@ -66,8 +56,11 @@ export default {
     siteOption() {
       return this.$store.getters.siteOption;
     },
-    productMenu() {
-      return this.$store.getters.sidebar;
+    cards() {
+      return this.$store.getters.cards;
+    },
+    mainMenu() {
+      return this.$store.getters.mainMenu;
     }
   }
 };
@@ -76,9 +69,16 @@ export default {
 .footer {
   background: var(--v-black-base);
   padding-top: 15px;
+  padding-bottom: 15px;
   &-wrapper {
     padding-left: 30px;
     padding-right: 30px;
+    padding-top: 0;
+    padding-bottom: 0;
+    @media screen and (max-width: 600px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
 }
 .footer-list {
@@ -90,6 +90,9 @@ export default {
   }
   h4 {
     font-size: 1.1em;
+    @media screen and (max-width: 600px) {
+      font-size: 0.9em;
+    }
     color: var(--v-white-base);
   }
 
@@ -100,15 +103,18 @@ export default {
     line-height: 2em;
 
     li {
-      font-size: 0.9em;
+      font-size: 1em;
       padding-top: 0;
       padding-bottom: 0;
+      @media screen and (max-width: 600px) {
+        font-size: 0.8em;
+      }
       a {
         text-decoration: none;
         color: #818992;
-        transition: color 0.2s;
+        transition: color 0.3s;
         &:hover {
-          text-decoration: underline;
+          // text-decoration: underline;
           color: var(--v-secondary-base);
         }
       }
@@ -117,6 +123,37 @@ export default {
   img {
     display: inline-flex;
     width: 150px;
+  }
+}
+.copyright {
+  &-text {
+    padding: 0;
+    text-align: right;
+    &:first-child {
+      text-align: left;
+    }
+    @media screen and (max-width: 600px) {
+      text-align: center;
+    }
+  }
+  p {
+    color: var(--v-gray-base);
+    font-size: 0.8em;
+    margin: 0;
+    @media screen and (max-width: 600px) {
+      text-align: center;
+    }
+  }
+  a {
+    margin-left: 15px;
+    color: var(--v-white-base);
+    &:first-child {
+      margin-left: 0;
+    }
+    @media screen and (max-width: 600px) {
+      display: block;
+      margin-bottom: 5px;
+    }
   }
 }
 </style>

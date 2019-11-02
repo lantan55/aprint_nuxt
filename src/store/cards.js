@@ -24,7 +24,7 @@ export default {
       },
       {
         id: 4,
-        icon: "IconCalendar",
+        icon: "IconCalendars",
         title: "Календари",
         subtitle: "от 2500 руб за 1000шт формата А5",
         href: "calendars"

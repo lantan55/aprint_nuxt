@@ -1,9 +1,19 @@
 <template>
   <section class="section map">
     <v-layout class="wrap">
-      <div id="map" style="width: 100%; height: 400px"></div>
-      <!-- <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adaf2561705070f78e624f29b89600a474ba35648532fee3a94d10f777730d734&amp;source=constructor" width="100%" height="480" frameborder="0"></iframe> -->
-      <v-card class="mx-auto desc" max-width="400" tile color="primary">
+      <iframe
+        src="https://yandex.ru/map-widget/v1/?um=constructor%3Adaf2561705070f78e624f29b89600a474ba35648532fee3a94d10f777730d734&amp;source=constructor"
+        width="100%"
+        height="480"
+        frameborder="0"
+      ></iframe>
+      <v-card
+        :hidden="this.$vuetify.breakpoint.smAndDown"
+        class="mx-auto desc"
+        max-width="400"
+        tile
+        color="primary"
+      >
         <v-list two-line disabled color="primary">
           <v-subheader>Контакты</v-subheader>
           <v-list-item-group>
@@ -44,7 +54,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 .map {
-  padding-bottom: 0;
+  padding: 50px 30px;
+  @media screen and (max-width: 600px) {
+    padding: 0;
+  }
 }
 img {
   filter: grayscale(100%);
@@ -54,7 +67,13 @@ img {
   // border: 6px solid var(--v-primary-base);
   width: calc(100% - 21px);
   overflow: hidden;
-  margin: 15px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.08);
+  // margin: 15px;
+  @media screen and (max-width: 600px) {
+    margin: 0;
+    width: 100%;
+    height: 300px;
+  }
   .desc {
     opacity: 0.8;
     position: absolute;

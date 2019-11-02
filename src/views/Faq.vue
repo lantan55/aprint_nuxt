@@ -1,7 +1,6 @@
 <template>
   <div>
     <MainBanner />
-
     <MainCards />
     <Feedback />
     <Partners />
@@ -28,7 +27,7 @@ export default {
   },
   data: () => ({}),
   mounted() {
-    // this.$store.dispatch("getPage", 1);
+    // this.$store.dispatch('GET_PAGE', { id: 1 });
   },
 
   computed: {

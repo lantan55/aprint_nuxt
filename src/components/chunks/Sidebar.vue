@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer app fixed width="320" color="white" class>
+  <v-navigation-drawer app color="white" v-model="sidebar" class>
     <v-container column align-center>
       <v-flex class="d-flex" justify-center>
         <router-link to="/">
@@ -8,7 +8,17 @@
       </v-flex>
       <v-flex class="d-flex" justify-center>
         <v-list class="pt-4 list">
-          <v-list-item v-for="(item, i) in sidebar" :key="i" :ripple="true" link :to="item.href">
+          <v-list-item v-for="(item, i) in cards" :key="i" :ripple="true" link :to="item.href">
+            <v-list-item-icon>
+              <icon-base
+                v-if="item.icon"
+                class="icon"
+                :viewBox=" item.id == 1 ? '0 0 32 18' : '0 0 32 32' "
+                :icon-name="item.icon"
+              >
+                <component :is="item.icon"></component>
+              </icon-base>
+            </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title class="menu-title">{{ item.title }}</v-list-item-title>
             </v-list-item-content>
@@ -32,32 +42,59 @@
           small
           :to="item.href"
         >
-          <v-icon>fab fa-{{ item.icon }}</v-icon>
+          <v-icon>fab fa-{{item.icon}}</v-icon>
         </v-btn>
-        <!-- <v-btn fab color="black--text" rounded class="ma-1 btn-social" small>
-          <v-icon>fab fa-instagram</v-icon>
-        </v-btn>
-        <v-btn fab color="fb--text" rounded class="ma-1 btn-social" small>
-          <v-icon>fab fa-facebook-f</v-icon>
-        </v-btn>
-        <v-btn fab color="whats--text" rounded class="ma-1 btn-social" small>
-          <v-icon>fab fa-whatsapp</v-icon>
-        </v-btn>-->
       </v-flex>
     </v-container>
   </v-navigation-drawer>
 </template>
 
 <script>
+import IconBase from "@/components/icons/IconBase.vue";
+import IconCard from "@/components/icons/IconCard.vue";
+import IconLeaflets from "@/components/icons/IconLeaflets.vue";
+import IconEurobuklet from "@/components/icons/IconEurobuklet.vue";
+import IconMenu from "@/components/icons/IconMenu.vue";
+import IconCalendars from "@/components/icons/IconCalendar.vue";
+import IconCatalogs from "@/components/icons/IconCatalogs.vue";
+import IconKonverts from "@/components/icons/IconKonverts.vue";
+import IconPakets from "@/components/icons/IconPakets.vue";
+
 export default {
+  components: {
+    IconBase,
+    IconCard,
+    IconLeaflets,
+    IconEurobuklet,
+    IconMenu,
+    IconCalendars,
+    IconCatalogs,
+    IconKonverts,
+    IconPakets
+  },
   data: () => ({}),
-  mounted() {},
+  mounted() {
+    console.log(this.$vuetify.breakpoint.smAndDown);
+    if (this.$vuetify.breakpoint.smAndDown) {
+      this.$store.dispatch("changeSidebar", false);
+      return;
+    }
+    this.$store.dispatch("changeSidebar", true);
+  },
   computed: {
-    sidebar() {
-      return this.$store.getters.sidebar;
+    cards() {
+      return this.$store.getters.cards;
     },
     siteOption() {
       return this.$store.getters.siteOption;
+    },
+    sidebar: {
+      get: function() {
+        return this.$store.getters.sidebarStatus;
+      },
+      set: function(state) {
+        this.$store.dispatch("changeSidebar", state);
+      }
     }
   }
 };
@@ -74,11 +111,12 @@ img {
 }
 .list {
   width: 100%;
-  text-align: center;
+  // text-align: center;
 }
 .menu-title {
-  font-size: 1em;
-  text-transform: uppercase;
+  font-size: 1.1em;
+  font-weight: 400;
+  // text-transform: uppercase;
 }
 .section-title {
   margin-bottom: 5px;
@@ -96,6 +134,9 @@ img {
   .v-list-item {
     // font-weight: bold;
   }
+}
+h3 {
+  font-size: 1.4em;
 }
 </style>
 
