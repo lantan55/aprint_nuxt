@@ -1,15 +1,104 @@
 <template>
   <div>
-    <section class="payment page section">
-      <v-container>
-        <v-flex md8>
-          <h1>{{page.title}}</h1>
-          <h4>Работаем по 100% предоплате.</h4>
-          <p>Просим относиться к этому с пониманием, т.к. отпечатанная продукция по Вашему макету носит строго индивидуальный характер. Если вдруг Вы передумаете забирать изготовленную продукцию после утверждения запуска в печать, то мы не сможем её никуда больше реализовать и данный заказ станет убыточным, не говоря о потраченном зря времени и менеджера, и печатника.</p>
-          <h4>Безналичный расчёт</h4>
-          <p>После оформления заказа будет сформирован счёт на оплату. Денежные средства поступят на наш счёт в течение 1-2 рабочих дней после оплаты заказа. Оплата заказов клиентами - юридическими лицами возможна только по безналичному расчёту. Все необходимые для бухгалтерии документы (оригинал счёта на оплату, счёт-фактура, накладная) выдаются вместе с заказом при получении.</p>
-        </v-flex>
-      </v-container>
+    <section class="requirements page section">
+      <v-row>
+        <v-col cols="10" offset="1">
+          <v-container>
+            <h1>{{page.title}}</h1>
+            <p
+              class="mt-4"
+            >Для изготовления качественного изделия, Вам следует при разработке макета учитывать несколько важных моментов:</p>
+            <v-row>
+              <v-col cols="12" class="d-flex justify-center">
+                <v-btn class="icon" outlined fab elevation="0" icon color="primary" large>
+                  <v-icon class>far fa-address-card</v-icon>
+                </v-btn>
+              </v-col>
+              <v-col cols="6">
+                <ul>
+                  <li>Размер листа должен быть равен послеобрезному формату.</li>
+                  <li>Например, визитка 90х50мм не должна размещаться на листе А4. Оборот должен находиться на следующем листе.</li>
+                  <li>На макет с последующей вырубкой должен быть наложен контур вырубного штампа (на отдельном слое).</li>
+                </ul>
+              </v-col>
+              <v-col cols="6"></v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12" class="d-flex justify-center">
+                <v-btn class="icon" outlined fab elevation="0" icon color="primary" large>
+                  <v-icon class>far fa-address-card</v-icon>
+                </v-btn>
+              </v-col>
+              <v-col cols="6">
+                <v-img
+                  contain
+                  :src="require(`@/assets/img/requirements/trebovania-k-maketam-vizitki.jpg`)"
+                  :lazy-src="require(`@/assets/img/requirements/trebovania-k-maketam-vizitki.jpg`)"
+                  aspect-ratio="1"
+                  max-width="500"
+                  max-height="300"
+                />
+              </v-col>
+              <v-col cols="6">
+                <ul>
+                  <li>Фон макета должен выходить не менее чем на 2мм за обрезное поле</li>
+                  <li>В макете не должно быть рамки по линии реза</li>
+                  <li>Внутренние элементы и текст должны находиться не ближе 3мм от линии реза</li>
+                </ul>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12" class="d-flex justify-center">
+                <v-btn class="icon" outlined fab elevation="0" icon color="primary" large>
+                  <v-icon class>far fa-address-card</v-icon>
+                </v-btn>
+              </v-col>
+              <v-col cols="6">
+                <ul>
+                  <li>Размер листа должен быть равен послеобрезному формату.</li>
+                  <li>Например, визитка 90х50мм не должна размещаться на листе А4. Оборот должен находиться на следующем листе.</li>
+                  <li>На макет с последующей вырубкой должен быть наложен контур вырубного штампа (на отдельном слое).</li>
+                </ul>
+              </v-col>
+              <v-col cols="6"></v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12" class="d-flex justify-center">
+                <v-btn class="icon" outlined fab elevation="0" icon color="primary" large>
+                  <v-icon class>far fa-address-card</v-icon>
+                </v-btn>
+              </v-col>
+              <v-col cols="6">
+                <ul>
+                  <li>Размер листа должен быть равен послеобрезному формату.</li>
+                  <li>Например, визитка 90х50мм не должна размещаться на листе А4. Оборот должен находиться на следующем листе.</li>
+                  <li>На макет с последующей вырубкой должен быть наложен контур вырубного штампа (на отдельном слое).</li>
+                </ul>
+              </v-col>
+              <v-col cols="6"></v-col>
+            </v-row>
+            <v-row>
+              <v-col cols="12" class="d-flex justify-center">
+                <v-btn class="icon" outlined fab elevation="0" icon color="primary" large>
+                  <v-icon class>far fa-address-card</v-icon>
+                </v-btn>
+              </v-col>
+              <v-col cols="6">
+                <ul>
+                  <li>Размер листа должен быть равен послеобрезному формату.</li>
+                  <li>Например, визитка 90х50мм не должна размещаться на листе А4. Оборот должен находиться на следующем листе.</li>
+                  <li>На макет с последующей вырубкой должен быть наложен контур вырубного штампа (на отдельном слое).</li>
+                </ul>
+              </v-col>
+              <v-col cols="6"></v-col>
+            </v-row>
+            <p>
+              Для удобства, Вы можете скачать наши требования к макетам по
+              <a href="#">ссылке</a>
+            </p>
+          </v-container>
+        </v-col>
+      </v-row>
     </section>
   </div>
 </template>
@@ -47,5 +136,28 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.requirements {
+  ul {
+    li {
+      position: relative;
+      margin-bottom: 15px;
+      padding-left: 30px;
+      list-style-type: none;
+      font-size: 1.3em;
+      color: var(--v-gray-base);
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 6px;
+        width: 17px;
+        height: 17px;
+        background: var(--v-primary-base);
+        -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      }
+    }
+  }
+}
 </style>
 

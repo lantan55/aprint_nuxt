@@ -4,7 +4,7 @@
       <iframe
         src="https://yandex.ru/map-widget/v1/?um=constructor%3Adaf2561705070f78e624f29b89600a474ba35648532fee3a94d10f777730d734&amp;source=constructor"
         width="100%"
-        height="480"
+        height="380"
         frameborder="0"
       ></iframe>
       <v-card

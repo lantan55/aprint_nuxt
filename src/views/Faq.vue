@@ -1,10 +1,14 @@
 <template>
   <div>
-    <MainBanner />
-    <MainCards />
-    <Feedback />
-    <Partners />
-    <Map />
+    <v-row>
+      <v-col cols="10" offset="1">
+        <MainBanner />
+        <MainCards />
+        <Feedback />
+        <Partners />
+        <Map />
+      </v-col>
+    </v-row>
   </div>
 </template>
 

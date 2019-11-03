@@ -57,6 +57,13 @@ export default {
         description:
           "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum maiores modi quidem veniam, expedita quis laboriosam, ullam facere adipisci, iusto, voluptate sapiente corrupti asperiores rem nemo numquam fuga ab at. ",
         mainCover: "assets/img/content/covers/1.png"
+      },
+      {
+        id: 9,
+        title: "Контакты",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum maiores modi quidem veniam, expedita quis laboriosam, ullam facere adipisci, iusto, voluptate sapiente corrupti asperiores rem nemo numquam fuga ab at. ",
+        mainCover: "assets/img/covers/01.png"
       }
     ],
     page: {}
@@ -66,10 +73,14 @@ export default {
       state.page = state.pages.filter(items => {
         return items.id == payload;
       });
+    },
+    clearPage(state) {
+      state.page = {};
     }
   },
   actions: {
     async getPage({ commit }, payload) {
+      // commit("clearPage");
       await commit("setLoader", true);
       try {
         await commit("setPage", payload);

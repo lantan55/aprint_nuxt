@@ -73,7 +73,8 @@
               href="https://policies.google.com/privacy"
             >политикой конфиденциальности</a>
           </p>
-          <button type="submit" class="btn btn-primary" :disabled="$v.$invalid">Отправить запрос</button>
+
+          <button type="submit" class="btn btn-primary" :disabled="$v.$invalid">Отправить</button>
         </form>
       </v-card>
     </v-container>

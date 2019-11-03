@@ -24,7 +24,7 @@
     </v-toolbar-items>
 
     <v-spacer></v-spacer>
-    <v-toolbar-items class="d-none d-md-flex">
+    <v-toolbar-items class="topmenu d-none d-md-flex">
       <v-btn text :ripple="false" to="/">Главная</v-btn>
       <v-menu
         origin="center left"
@@ -133,6 +133,25 @@ img {
       color: var(--v-black-base);
     }
   }
+}
+
+.topmenu {
+  .v-btn__content {
+  }
+  i {
+    font-size: 12px;
+  }
+  // .v-btn {
+  //   &:hover {
+  //     opacity: 1;
+  //   }
+  // }
+  // .v-btn--active {
+  //   color: var(--v-secondary-base);
+  //   &::before {
+  //     opacity: 0;
+  //   }
+  // }
 }
 </style>
 

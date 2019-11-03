@@ -1,12 +1,16 @@
 <template>
   <div>
     <section class="urgent page section">
-      <v-container>
-        <v-flex md8 xs12>
-          <h1>{{page.title}}</h1>
-          <p>{{ page.subtitle }}</p>
-        </v-flex>
-      </v-container>
+      <v-row>
+        <v-col cols="10" offset="1">
+          <v-container>
+            <v-flex md8 xs12>
+              <h1>{{page.title}}</h1>
+              <p>{{ page.subtitle }}</p>
+            </v-flex>
+          </v-container>
+        </v-col>
+      </v-row>
     </section>
   </div>
 </template>

@@ -16,16 +16,16 @@
 }
 
 .section {
-  padding-bottom: 70px;
-  padding-top: 100px;
-  background: var(--var-white-base);
+  padding-bottom: 60px;
+  padding-top: 60px;
+  background: var(--v-white-base);
   @media screen and (max-width: 600px) {
     padding: 10px;
   }
 }
 .section.page {
-  padding-left: 45px;
-  padding-top: 30px;
+  padding-bottom: 45px;
+  padding-top: 45px;
   @media screen and (max-width: 600px) {
     padding: 15px;
   }
@@ -76,5 +76,48 @@ a {
   &:hover {
     color: var(--v-primary-base);
     text-decoration: none;
+  }
+}
+
+.single-services {
+  background: var(--v-white-base);
+  min-height: 250px;
+  padding: 30px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.08);
+  transition: 0.4s;
+  cursor: pointer;
+  transition: 0.4s;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+    .icon {
+      background: var(--v-primary-base);
+      border-color: var(--v-primary-base);
+      i {
+        color: var(--v-white-base);
+      }
+    }
+  }
+  .icon {
+  }
+  h4 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 1.5em;
+  }
+  p,
+  a {
+    font-size: 1em;
+    color: var(--v-gray-base) !important;
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    transition: 0.4s;
+    &:hover {
+      color: var(--v-secondary-base);
+    }
   }
 }

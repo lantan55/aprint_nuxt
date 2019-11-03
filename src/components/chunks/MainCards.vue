@@ -10,17 +10,12 @@
         <v-col cols="10">
           <v-row justify="center">
             <v-col lg="4" xs="2" v-for="(item, i) in cards" :key="i">
-              <div class="single-services">
-                <icon-base
-                  v-if="item.icon"
-                  class="icon"
-                  :viewBox=" item.id == 1 ? '0 0 32 18' : '0 0 32 32' "
-                  :icon-name="item.icon"
-                  iconColor="#FFFFFF"
-                >
-                  <component :is="item.icon"></component>
-                </icon-base>
-                <h3>{{ item.title }}</h3>
+              <div class="single-services d-flex flex-column align-center justify-center">
+                <v-btn class="icon" outlined fab elevation="0" icon color="primary" x-large>
+                  <v-icon class>far fa-address-card</v-icon>
+                </v-btn>
+
+                <h4>{{ item.title }}</h4>
                 <p>{{ item.subtitle }}</p>
               </div>
             </v-col>
@@ -28,6 +23,7 @@
         </v-col>
 
         <!-- TODO исправить тень -->
+        <!-- TODO сделать png иконки  -->
       </v-row>
     </v-container>
 
@@ -100,71 +96,50 @@ export default {
   z-index: 1;
   position: relative;
   background-color: #edf5ff;
-  .single-services {
-    // margin-bottom: 30px;
-    background: var(--v-white-base);
-    min-height: 250px;
-    padding: 30px;
-    // text-align: right;
-    // background: var(--v-white-base);
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.08);
-    // border-radius: 5px;
-    transition: 0.4s;
-    // z-index: -1;
-    cursor: pointer;
-    &:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
-      .icon {
-        // background: var(--v-primary-base);
-        color: #ffffff;
-      }
-    }
+}
+
+.single-services {
+  background: var(--v-white-base);
+  min-height: 250px;
+  padding: 30px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.08);
+  transition: 0.4s;
+  cursor: pointer;
+  transition: 0.4s;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
     .icon {
-      // display: inline-block;
-      width: 40px;
-      height: 40px;
-      text-align: center;
-      // line-height: 60px;
-      // background: #edf5ff;
-      // border-radius: 50%;
-      font-size: 25px;
-      path {
-        fill: var(--v-primary-base);
+      background: var(--v-secondary-base);
+      border-color: var(--v-secondary-base);
+      i {
+        color: var(--v-white-base);
       }
-      transition: 0.4s;
-    }
-    h3 {
-      font-size: 23px;
-      font-weight: 700;
-      margin-top: 10px;
-      // margin-bottom: 15px;
-    }
-    p {
-      margin-top: 5px;
     }
   }
-  .shape10 {
-    position: absolute;
-    left: 5%;
-    top: 8%;
-    z-index: -1;
-    animation: movebounce 5s linear infinite;
-  }
-  .shape9 {
-    position: absolute;
-    left: 45%;
-    top: 40%;
-    z-index: -1;
-    animation: animationFramesOne 15s infinite linear;
-  }
-  .shape3 {
-    position: absolute;
-    bottom: 85px;
-    z-index: -1;
-    right: 30px;
-    animation: movebounce 5s linear infinite;
-  }
+}
+
+.shape10 {
+  position: absolute;
+  left: 5%;
+  top: 8%;
+  z-index: -1;
+  animation: movebounce 5s linear infinite;
+}
+.shape9 {
+  position: absolute;
+  left: 45%;
+  top: 40%;
+  z-index: -1;
+  animation: animationFramesOne 15s infinite linear;
+}
+.shape3 {
+  position: absolute;
+  bottom: 85px;
+  z-index: -1;
+  right: 30px;
+  animation: movebounce 5s linear infinite;
 }
 </style>
 
