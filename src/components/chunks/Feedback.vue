@@ -179,6 +179,9 @@ export default {
 <style lang="scss" scoped>
 .feedback {
   // background-color: #edf5ff;
+  background-image: url("../../assets/img/bg/bg1.png");
+  background-repeat: repeat;
+  background-position: left top;
   padding: 0;
 
   &-box {

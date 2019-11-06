@@ -46,7 +46,7 @@ export default {
       },
       {
         id: 7,
-        title: "Контакты",
+        title: "",
         subtitle:
           "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum maiores modi quidem veniam, expedita quis laboriosam, ullam facere adipisci, iusto, voluptate sapiente corrupti asperiores rem nemo numquam fuga ab at. ",
         mainCover: "assets/img/content/covers/1.png"
@@ -63,6 +63,12 @@ export default {
         title: "Контакты",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum maiores modi quidem veniam, expedita quis laboriosam, ullam facere adipisci, iusto, voluptate sapiente corrupti asperiores rem nemo numquam fuga ab at. ",
+        mainCover: "assets/img/covers/01.png"
+      },
+      {
+        id: 10,
+        title: "FAQ",
+        description: "Страница находится в разработке",
         mainCover: "assets/img/covers/01.png"
       }
     ],

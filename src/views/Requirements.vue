@@ -8,11 +8,9 @@
             <p
               class="mt-4"
             >Для изготовления качественного изделия, Вам следует при разработке макета учитывать несколько важных моментов:</p>
-            <v-row>
-              <v-col cols="12" class="d-flex justify-center">
-                <v-btn class="icon" outlined fab elevation="0" icon color="primary" large>
-                  <v-icon class>far fa-address-card</v-icon>
-                </v-btn>
+            <v-row class="elevation-1 pa-4 my-4">
+              <v-col cols="12" class="d-flex justify-start">
+                <h4>1. Размер макета</h4>
               </v-col>
               <v-col cols="6">
                 <ul>
@@ -23,11 +21,9 @@
               </v-col>
               <v-col cols="6"></v-col>
             </v-row>
-            <v-row>
-              <v-col cols="12" class="d-flex justify-center">
-                <v-btn class="icon" outlined fab elevation="0" icon color="primary" large>
-                  <v-icon class>far fa-address-card</v-icon>
-                </v-btn>
+            <v-row class="elevation-1 pa-4 my-4">
+              <v-col cols="12" class="d-flex justify-start">
+                <h4>2. Вылеты под обрез</h4>
               </v-col>
               <v-col cols="6">
                 <v-img
@@ -47,11 +43,9 @@
                 </ul>
               </v-col>
             </v-row>
-            <v-row>
-              <v-col cols="12" class="d-flex justify-center">
-                <v-btn class="icon" outlined fab elevation="0" icon color="primary" large>
-                  <v-icon class>far fa-address-card</v-icon>
-                </v-btn>
+            <v-row class="elevation-1 pa-4 my-4">
+              <v-col cols="12" class="d-flex justify-start">
+                <h4>3. Размер макета</h4>
               </v-col>
               <v-col cols="6">
                 <ul>
@@ -62,11 +56,9 @@
               </v-col>
               <v-col cols="6"></v-col>
             </v-row>
-            <v-row>
-              <v-col cols="12" class="d-flex justify-center">
-                <v-btn class="icon" outlined fab elevation="0" icon color="primary" large>
-                  <v-icon class>far fa-address-card</v-icon>
-                </v-btn>
+            <v-row class="elevation-1 pa-4 my-4">
+              <v-col cols="12" class="d-flex justify-start">
+                <h4>4. Размер макета</h4>
               </v-col>
               <v-col cols="6">
                 <ul>
@@ -77,21 +69,7 @@
               </v-col>
               <v-col cols="6"></v-col>
             </v-row>
-            <v-row>
-              <v-col cols="12" class="d-flex justify-center">
-                <v-btn class="icon" outlined fab elevation="0" icon color="primary" large>
-                  <v-icon class>far fa-address-card</v-icon>
-                </v-btn>
-              </v-col>
-              <v-col cols="6">
-                <ul>
-                  <li>Размер листа должен быть равен послеобрезному формату.</li>
-                  <li>Например, визитка 90х50мм не должна размещаться на листе А4. Оборот должен находиться на следующем листе.</li>
-                  <li>На макет с последующей вырубкой должен быть наложен контур вырубного штампа (на отдельном слое).</li>
-                </ul>
-              </v-col>
-              <v-col cols="6"></v-col>
-            </v-row>
+
             <p>
               Для удобства, Вы можете скачать наши требования к макетам по
               <a href="#">ссылке</a>
@@ -138,6 +116,7 @@ export default {
 <style lang="scss" scoped>
 .requirements {
   ul {
+    padding-left: 0;
     li {
       position: relative;
       margin-bottom: 15px;

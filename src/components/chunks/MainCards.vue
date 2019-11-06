@@ -95,7 +95,10 @@ export default {
 .main-cards {
   z-index: 1;
   position: relative;
-  background-color: #edf5ff;
+  // background-color: #edf5ff;
+  background-image: url("../../assets/img/bg/bg3.png");
+  background-repeat: repeat;
+  background-position: left top;
 }
 
 .single-services {

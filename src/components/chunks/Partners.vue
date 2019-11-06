@@ -35,6 +35,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 .partners {
+  background-image: url("../../assets/img/bg/bg2.png");
+  background-repeat: repeat;
+  background-position: left top;
+
   padding: 50px 30px;
   @media screen and (max-width: 600px) {
     padding: 15px 15px;

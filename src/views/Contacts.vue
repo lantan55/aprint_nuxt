@@ -232,8 +232,14 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.section.contacts.page {
+  background-image: url("../assets/img/bg/bg2.png");
+  background-repeat: repeat;
+  background-position: left top;
+}
 .contacts-list {
-  background-color: #edf5ff;
+  // background-color: #edf5ff;
+
   .single-services {
     padding: 10px;
     a {
