@@ -234,7 +234,7 @@
 </script>
 <style lang="scss" scoped>
 	.section.contacts.page {
-		background-image: url("../assets/img/bg/bg2.png");
+		background-image: url("../assets/img/bg/bags.png");
 		background-repeat: repeat;
 		background-position: left top;
 	}

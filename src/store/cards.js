@@ -34,21 +34,21 @@ export default {
         icon: "IconMenu",
         title: "Меню",
         subtitle: "от 2500 руб за 1000шт формата А5",
-        href: "menu"
+        href: "menus"
       },
       {
         id: 6,
         icon: "IconKonverts",
         title: "Конверты",
         subtitle: "от 2500 руб за 1000шт формата А5",
-        href: "konverts"
+        href: "envelopes"
       },
       {
         id: 7,
         icon: "IconPakets",
         title: "Пакеты",
         subtitle: "от 2500 руб за 1000шт формата А5",
-        href: "pockets"
+        href: "bags"
       },
       {
         id: 8,

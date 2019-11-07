@@ -30,6 +30,13 @@
     padding: 15px;
   }
 }
+.section.product {
+  padding-bottom: 45px;
+  padding-top: 45px;
+  @media screen and (max-width: 600px) {
+    padding: 15px;
+  }
+}
 
 .box {
   max-width: 1200px;

@@ -77,7 +77,7 @@
 		z-index: 1;
 		position: relative;
 		// background-color: #edf5ff;
-		background-image: url("../../assets/img/bg/bg3.png");
+		background-image: url("../../assets/img/bg/bg6.png");
 		background-repeat: repeat;
 		background-position: left top;
 	}

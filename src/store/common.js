@@ -1,7 +1,8 @@
 export default {
   state: {
     loader: false,
-    sidebar: false
+    sidebar: false,
+    header: false
   },
   mutations: {
     setLoader(state, payload) {
@@ -9,11 +10,17 @@ export default {
     },
     setSidebar(state, payload) {
       state.sidebar = payload;
+    },
+    setHeader(state, payload) {
+      state.header = payload;
     }
   },
   actions: {
     changeSidebar({ commit }, payload) {
       commit("setSidebar", payload);
+    },
+    changeHeader({ commit }, payload) {
+      commit("setHeader", payload);
     }
   },
   getters: {
@@ -22,6 +29,9 @@ export default {
     },
     sidebarStatus(state) {
       return state.sidebar;
+    },
+    headerStatus(state) {
+      return state.header;
     }
   }
 };

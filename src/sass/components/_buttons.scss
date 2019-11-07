@@ -1,4 +1,44 @@
 .btn {
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  padding: 13px 31px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  position: relative;
+  background: var(--v-primary-base);
+  box-shadow: 0 13px 27px 0 rgba(163, 48, 53, 0.25);
+  z-index: 1;
+  transition: 0.9s;
+  &:hover {
+    &::after,
+    &::before {
+      width: 50%;
+    }
+  }
+  &:focus,
+  &:active {
+    outline: none;
+  }
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: var(--v-white-base);
+    z-index: -1;
+    border-radius: 5px;
+    transition: 0.4s;
+  }
+  &::before {
+    right: 0;
+  }
+  &::after {
+    left: 0;
+  }
+  &.btn-primary {
     font-weight: 700;
     font-size: 15px;
     border: none;
@@ -6,50 +46,18 @@
     border-radius: 5px;
     text-transform: uppercase;
     position: relative;
-    background: var(--v-primary-base);
+    color: var(--v-white-base);
+    background: var(--v-secondary-base);
     box-shadow: 0 13px 27px 0 rgba(163, 48, 53, 0.25);
     z-index: 1;
-    transition: .9s;
-    &:hover{
-        &::after, &::before{
-            width: 50%;
-        }
+    transition: 0.9s;
+    cursor: pointer;
+    &:hover,
+    &:focus,
+    &:active {
+      background: var(--v-white-base);
+      color: var(--v-secondary-base);
+      transform: translateY(-5px);
     }
-    &::after, &::before{
-        content: '';
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 0;
-        background: var(--v-white-base);
-        z-index: -1;
-        border-radius: 5px;
-        transition: .4s;
-    }
-    &::before {
-        right: 0;   
-    }
-    &::after {
-        left: 0;
-    }
-    &.btn-primary{
-        font-weight: 700;
-        font-size: 15px;
-        border: none;
-        padding: 13px 31px;
-        border-radius: 5px;
-        text-transform: uppercase;
-        position: relative;
-        color: var(--v-white-base);
-        background: var(--v-secondary-base);
-        box-shadow: 0 13px 27px 0 rgba(163, 48, 53, 0.25);
-        z-index: 1;
-        transition: .9s;
-        cursor: pointer;
-        &:hover, &:focus, &:active{
-            background: var(--v-white-base);
-            color:  var(--v-secondary-base);
-            transform: translateY(-5px);
-        }
-    }
+  }
 }
