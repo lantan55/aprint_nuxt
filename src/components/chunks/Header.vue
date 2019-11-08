@@ -8,7 +8,7 @@
 					<v-icon class="icon">fas fa-phone</v-icon>
 				</v-list-item-icon>
 				<v-list-item-content class="contacts">
-					<v-list-item-title class="contacts-title">{{ siteOption.phoneBase }}</v-list-item-title>
+					<v-list-item-title class="contacts-title">{{ phone }}</v-list-item-title>
 					<v-list-item-subtitle class="contacts-subtitle">Позвонить нам</v-list-item-subtitle>
 				</v-list-item-content>
 			</v-list-item>
@@ -17,7 +17,7 @@
 					<v-icon class="icon">fas fa-envelope</v-icon>
 				</v-list-item-icon>
 				<v-list-item-content class="contacts">
-					<v-list-item-title class="contacts-title">{{ siteOption.mailBase }}</v-list-item-title>
+					<v-list-item-title class="contacts-title">{{ email }}</v-list-item-title>
 					<v-list-item-subtitle class="contacts-subtitle">Запросить расчет</v-list-item-subtitle>
 				</v-list-item-content>
 			</v-list-item>
@@ -60,6 +60,10 @@
 <script>
 	export default {
 		data: () => ({}),
+		props: {
+			email: String,
+			phone: String
+		},
 		mounted() {},
 		methods: {
 			changeSidebar() {
@@ -70,9 +74,6 @@
 			}
 		},
 		computed: {
-			siteOption() {
-				return this.$store.getters.siteOption;
-			},
 			header() {
 				return this.$store.getters.headerStatus;
 			}

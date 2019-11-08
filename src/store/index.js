@@ -5,7 +5,7 @@ import Axios from "axios";
 import common from "./common";
 import global from "./global";
 import sidebar from "./sidebar";
-import cards from "./cards";
+import products from "./products";
 import brands from "./brands";
 import pages from "./pages";
 // import common from './common';
@@ -19,7 +19,7 @@ export default new Vuex.Store({
     common,
     global,
     sidebar,
-    cards,
+    products,
     brands,
     pages
   }

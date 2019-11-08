@@ -159,7 +159,7 @@
 			// }
 		},
 		mounted() {
-			console.log(this.$vuetify.breakpoint.smAndDown);
+			// console.log(this.$vuetify.breakpoint.smAndDown);
 		},
 		computed: {
 			// loading() {

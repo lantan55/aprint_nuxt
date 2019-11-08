@@ -5,8 +5,8 @@
 			<v-progress-circular indeterminate color="primary" size="64"></v-progress-circular>
 		</v-overlay>
 
-		<Sidebar v-if="!showPreloader" />
-		<Header v-if="!showPreloader" />
+		<Sidebar :logo="settings.logo" v-if="!showPreloader" />
+		<Header :email="settings.mail" :phone="settings.phone" v-if="!showPreloader" />
 		<v-content>
 			<router-view></router-view>
 
@@ -15,7 +15,7 @@
 			<Feedback/>
 			<Partners/>
 			<Map/>-->
-			<Footer />
+			<!-- <Footer /> -->
 		</v-content>
 
 		<!-- TODO доделать карту  -->
@@ -51,31 +51,11 @@
 			showSidebar: false,
 			showHeader: false
 		}),
-		mounted() {
-			this.showPreloader = true;
-			Promise.all([
-				// this.$http.get("/someUrl"),
-				// this.$http.get("/someUrl2")
-				console.log("Данные загружены")
-			]).then(
-				results => {
-					// данные загружены, убираем прелоадер
-					setTimeout(() => {
-						this.showPreloader = false;
-					}, 500);
-					this.$store.dispatch("changeSidebar", true).then(() => {
-						this.$store.dispatch("changeHeader", true);
-					});
-				},
-				response => {
-					// один или несколько запросов завершились с ошибкой
-					// показываем сообщение об ошибке
-					// this.showPreloader = false;
-					// this.showError = true;
-					console.log("Данные не загрузились");
-					this.showError = true;
-				}
-			);
+		mounted() {},
+		computed: {
+			settings() {
+				return this.$store.getters.settings;
+			}
 		}
 	};
 </script>

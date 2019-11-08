@@ -32,7 +32,7 @@ export default new Vuetify({
         gray: "#818992",
         vk: "#4B739D",
         fb: "#27368D",
-        inst: "",
+        // inst: "",
         whats: "#01CD00",
         anchor: "#D93030"
       }

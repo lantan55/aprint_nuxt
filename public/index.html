@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title>aprint.pro</title>
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons"> -->
     <!-- <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css"> -->
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=7771e467-15fa-48c8-9d54-2b2a38817dab&lang=ru_RU" type="text/javascript"></script>
+    <!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=7771e467-15fa-48c8-9d54-2b2a38817dab&lang=ru_RU" type="text/javascript"></script> -->
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but aprint.pro doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong
+        >We're sorry but aprint.pro doesn't work properly without JavaScript
+        enabled. Please enable it to continue.</strong
+      >
     </noscript>
     <div id="app"></div>
     <script type="text/javascript">
-      ymaps.ready(init);
-        function init () {
-            var myMap = new ymaps.Map('map', {
-                    center: [59.8664,30.3068],
-                    zoom: 15,
-                    controls: ['zoomControl']
-                }),
-        
-                myPlacemark1 = new ymaps.Placemark([59.8644,30.3095], {
-                    balloonContent: 'Типография Апрель'
-                }, {
-                    iconLayout: 'default#image',
-                    // iconImageSize: [55, 55],
-                    // iconImageHref: '/src/assets/img/spinner.svg',
-                });
-        
-            myMap.geoObjects.add(myPlacemark1);
-            myMap.behaviors.disable('scrollZoom');
-        }
-  </script>
+      // ymaps.ready(init);
+      //   function init () {
+      //       var myMap = new ymaps.Map('map', {
+      //               center: [59.8664,30.3068],
+      //               zoom: 15,
+      //               controls: ['zoomControl']
+      //           }),
+
+      //           myPlacemark1 = new ymaps.Placemark([59.8644,30.3095], {
+      //               balloonContent: 'Типография Апрель'
+      //           }, {
+      //               iconLayout: 'default#image',
+      //               // iconImageSize: [55, 55],
+      //               // iconImageHref: '/src/assets/img/spinner.svg',
+      //           });
+
+      //       myMap.geoObjects.add(myPlacemark1);
+      //       myMap.behaviors.disable('scrollZoom');
+      //  }
+    </script>
   </body>
 </html>

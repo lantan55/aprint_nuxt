@@ -11,8 +11,8 @@
 						</v-col>
 						<v-col cols="6">
 							<v-img
-								:src="require(`@/${page.mainCover}`)"
-								:lazy-src="require(`@/${page.mainCover}`)"
+								:src="page.main_image"
+								:lazy-src="page.main_image"
 								aspect-ratio="1"
 								max-width="500"
 								max-height="300"
@@ -46,12 +46,12 @@
 		},
 		data: () => ({}),
 		mounted() {
-			this.$store.dispatch("getPage", 8);
+			// this.$store.dispatch("getPage", 8);
 		},
 
 		computed: {
 			page() {
-				return this.$store.getters.page[0];
+				return this.$store.getters.products[0] || {};
 			},
 			status() {
 				// return this.$store.getters.LOADING;

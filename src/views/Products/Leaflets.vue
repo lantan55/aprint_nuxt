@@ -1,17 +1,17 @@
 <template>
 	<div>
-		<section class="product cards section">
+		<section class="product leaflets section">
 			<v-row>
 				<v-col cols="10" offset="1">
 					<v-row>
 						<v-col cols="6">
 							<h1>{{page.title}}</h1>
-							<p class="mt-4">{{ page.description }}</p>
+							<p class="mt-4" v-html="page.description"></p>
 						</v-col>
 						<v-col cols="6">
 							<v-img
-								:src="require(`@/${page.mainCover}`)"
-								:lazy-src="require(`@/${page.mainCover}`)"
+								:src="page.main_image"
+								:lazy-src="page.main_image"
 								aspect-ratio="1"
 								max-width="500"
 								max-height="300"
@@ -43,13 +43,11 @@
 			// Map
 		},
 		data: () => ({}),
-		mounted() {
-			this.$store.dispatch("getPage", 11);
-		},
+		mounted() {},
 
 		computed: {
 			page() {
-				return this.$store.getters.page[0];
+				return this.$store.getters.products[1] || {};
 			},
 			status() {
 				// return this.$store.getters.LOADING;
@@ -58,7 +56,7 @@
 	};
 </script>
 <style lang="scss" scoped>
-	.section.product.cards {
+	.section.product.leaflets {
 		background-image: url("../../assets/img/bg/leaflets.png");
 		background-repeat: repeat;
 		background-position: left top;

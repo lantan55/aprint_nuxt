@@ -1,15 +1,15 @@
 <template>
 	<transition name="slide-fade">
-		<v-navigation-drawer app color="white" v-model="sidebar" class>
+		<v-navigation-drawer app color="white" class>
 			<v-container column align-center>
 				<v-flex class="d-flex" justify-center>
 					<router-link to="/">
-						<img :src="require(`@/${siteOption.logo}`)" alt />
+						<img :src="logo" alt />
 					</router-link>
 				</v-flex>
 				<v-flex class="d-flex" justify-center>
 					<v-list class="pt-4 list">
-						<v-list-item v-for="(item, i) in cards" :key="i" :ripple="true" link :to="item.href">
+						<v-list-item v-for="(item, i) in menu" :key="i" :ripple="true" link :to="item.alias">
 							<v-list-item-icon>
 								<icon-base
 									v-if="item.icon"
@@ -34,16 +34,16 @@
 				</v-flex>
 				<v-flex class="d-flex" justify-center>
 					<v-btn
-						v-for="(item, i) in siteOption.social"
+						v-for="(item, i) in socials"
 						:key="i"
 						fab
 						color="primary--text"
 						rounded
 						class="ma-1 btn-social"
 						small
-						:to="item.href"
+						:to="item.link"
 					>
-						<v-icon>fab fa-{{item.icon}}</v-icon>
+						<v-icon>fab fa-{{item.name}}</v-icon>
 					</v-btn>
 				</v-flex>
 			</v-container>
@@ -75,6 +75,10 @@
 			IconPakets
 		},
 		data: () => ({}),
+		props: {
+			logo: String,
+			social: Array
+		},
 		mounted() {
 			// if (this.$vuetify.breakpoint.smAndDown) {
 			// 	this.$store.dispatch("changeSidebar", false);
@@ -83,20 +87,21 @@
 			// this.$store.dispatch("changeSidebar", true);
 		},
 		computed: {
-			cards() {
-				return this.$store.getters.cards;
+			menu() {
+				return this.$store.getters.products;
 			},
-			siteOption() {
-				return this.$store.getters.siteOption;
-			},
-			sidebar: {
-				get: function() {
-					return this.$store.getters.sidebarStatus;
-				},
-				set: function(state) {
-					this.$store.dispatch("changeSidebar", state);
-				}
+			socials() {
+				return this.$store.getters.socials;
 			}
+
+			// sidebar: {
+			// 	get: function() {
+			// 		return this.$store.getters.sidebarStatus;
+			// 	},
+			// 	set: function(state) {
+			// 		this.$store.dispatch("changeSidebar", state);
+			// 	}
+			// }
 		}
 	};
 </script>
@@ -149,7 +154,7 @@
 		transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 	}
 	.slide-fade-enter, .slide-fade-leave-to
-						/* .slide-fade-leave-active до версии 2.1.8 */ {
+																															/* .slide-fade-leave-active до версии 2.1.8 */ {
 		transform: translateX(10px);
 		opacity: 0;
 	}

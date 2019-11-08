@@ -1,43 +1,63 @@
+import Vue from "vue";
 export default {
   state: {
-    siteOption: {
-      siteName: "Типография Апрель",
-      logo: "assets/img/logo_aprel.svg",
-      phoneBase: "8 812 994-16-47",
-      phoneAdd: "",
-      mailBase: "info@apprint.ru",
-      mailAdd: "",
-      address: "ул. Бассейная, д. 21",
-      addressDesc: "5 этаж, офис 502",
-      social: [
-        {
-          icon: "vk",
-          href: "vk.com"
-        },
-        {
-          icon: "instagram",
-          href: "vk.com"
-        },
-        {
-          icon: "facebook-f",
-          href: "vk.com"
-        },
-        {
-          icon: "whatsapp",
-          href: "vk.com"
-        }
-      ]
-    }
+    settings: [],
+    socials: []
   },
   mutations: {
-    setSiteOption(state, payload) {
-      state.setSiteOption = payload;
+    SET_SETTINGS(state, payload) {
+      state.settings = payload;
+    },
+    SET_SOCIALS(state, payload) {
+      state.socials = payload;
     }
   },
-  actions: {},
+  actions: {
+    LOAD_SETTINGS({ commit }) {
+      var docRef = Vue.$db.collection("settings").doc("KyT9e6YY3rtUD51vuGgw");
+      docRef
+        .get()
+        .then(function(doc) {
+          if (doc.exists) {
+            const data = doc.data();
+            commit("SET_SETTINGS", data);
+          } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+          }
+        })
+        .catch(function(error) {
+          console.log("Error getting document:", error);
+        });
+    },
+    LOAD_SOCIALS({ commit }) {
+      Vue.$db
+        .collection("settings")
+        .doc("KyT9e6YY3rtUD51vuGgw")
+        .collection("social")
+        .get()
+        .then(querySnapshot => {
+          let socials = [];
+          querySnapshot.forEach(doc => {
+            const data = doc.data();
+            let social = {
+              id: doc.id,
+              name: data.name,
+              link: data.link
+            };
+            socials.push(social);
+          });
+          commit("SET_SOCIALS", socials);
+        })
+        .catch(error => console.log(error));
+    }
+  },
   getters: {
-    siteOption(state) {
-      return state.siteOption;
+    settings(state) {
+      return state.settings;
+    },
+    socials(state) {
+      return state.socials;
     }
   }
 };
