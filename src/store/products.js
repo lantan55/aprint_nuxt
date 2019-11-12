@@ -1,69 +1,16 @@
 import Vue from "vue";
 export default {
   state: {
-    products: []
-    // cards: [
-    //   {
-    //     id: 1,
-    //     icon: "IconCard",
-    //     title: "Визитки",
-    //     subtitle: "от 2500 руб за 1000шт формата А5",
-    //     href: "cards"
-    //   },
-    //   {
-    //     id: 2,
-    //     icon: "IconLeaflets",
-    //     title: "Листовки",
-    //     subtitle: "от 2500 руб за 1000шт формата А5",
-    //     href: "leaflets"
-    //   },
-    //   {
-    //     id: 3,
-    //     icon: "IconEurobuklet",
-    //     title: "Буклеты",
-    //     subtitle: "от 2500 руб за 1000шт формата А5",
-    //     href: "booklets"
-    //   },
-    //   {
-    //     id: 4,
-    //     icon: "IconCalendars",
-    //     title: "Календари",
-    //     subtitle: "от 2500 руб за 1000шт формата А5",
-    //     href: "calendars"
-    //   },
-    //   {
-    //     id: 5,
-    //     icon: "IconMenu",
-    //     title: "Меню",
-    //     subtitle: "от 2500 руб за 1000шт формата А5",
-    //     href: "menus"
-    //   },
-    //   {
-    //     id: 6,
-    //     icon: "IconKonverts",
-    //     title: "Конверты",
-    //     subtitle: "от 2500 руб за 1000шт формата А5",
-    //     href: "envelopes"
-    //   },
-    //   {
-    //     id: 7,
-    //     icon: "IconPakets",
-    //     title: "Пакеты",
-    //     subtitle: "от 2500 руб за 1000шт формата А5",
-    //     href: "bags"
-    //   },
-    //   {
-    //     id: 8,
-    //     icon: "IconCatalogs",
-    //     title: "Каталоги",
-    //     subtitle: "от 2500 руб за 1000шт формата А5",
-    //     href: "catalogs"
-    //   }
-    // ]
+    products: [],
+    sections: [],
+    product: {}
   },
   mutations: {
     SET_PRODUCTS(state, payload) {
       state.products = payload;
+    },
+    SET_PRODUCT(state, payload) {
+      state.product = payload;
     }
   },
   actions: {
@@ -74,8 +21,11 @@ export default {
         .get()
         .then(querySnapshot => {
           let products = [];
+          let sections = [];
+
           querySnapshot.forEach(doc => {
             const data = doc.data();
+
             let product = {
               id: data.id,
               title: data.title,
@@ -83,7 +33,8 @@ export default {
               alias: data.alias,
               icon: data.icon,
               main_image: data.main_image,
-              description: data.description
+              description: data.description,
+              bg: data.bg
             };
             products.push(product);
           });
@@ -91,10 +42,63 @@ export default {
         })
         .catch(error => console.log(error));
     }
+
+    // LOAD_PRODUCT({ commit }, payload) {
+    //   Vue.$db
+    //     .collection("products")
+    //     .doc(payload)
+    //     .get()
+    //     .then(doc => {
+    //       if (doc.exists) {
+    //         const data = doc.data();
+    //         let product = {
+    //           id: doc.id,
+    //           title: data.title,
+    //           subtitle: data.subtitle,
+    //           icon: data.icon,
+    //           main_image: data.main_image,
+    //           description: data.description,
+    //           bg: data.bg,
+    //           alias: data.alias
+    //         };
+    //         console.log("product", product);
+
+    //         Vue.$db
+    //           .collection("products")
+    //           .doc(payload)
+    //           .collection("sections")
+    //           .get()
+    //           .then(querySnapshot => {
+    //             let sections = [];
+    //             querySnapshot.forEach(doc => {
+    //               const data = doc.data();
+
+    //               let section = {
+    //                 name: doc.id,
+    //                 id: data.id,
+    //                 title: data.title,
+    //                 description: data.description,
+    //                 bg: data.bg
+    //               };
+
+    //               sections.push(section);
+    //             });
+    //             console.log("section", sections);
+    //             product.sections = sections;
+    //             commit("SET_PRODUCT", product);
+    //             console.log(product);
+    //           })
+    //           .catch(error => console.log(error));
+    //       }
+    //     });
+    // }
   },
   getters: {
     products(state) {
       return state.products;
+    },
+    sections(state) {
+      return state.sections;
     }
   }
 };
