@@ -1,5 +1,5 @@
 <template>
-  <section class="product cards section" :style="{'background-image': `url(${bg})`} ">
+  <section class="product leaflets section" :style="{'background-image': `url(${bg})`} ">
     <v-row>
       <v-col cols="9" offset="1">
         <v-row justify="space-between">
@@ -43,7 +43,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.section.product.cards {
+.section.product.leaflets {
   background-repeat: repeat;
   background-position: left top;
   p {
