@@ -15,6 +15,14 @@
   width: 5px;
 }
 
+::selection {
+  background: var(--v-secondary-base);
+}
+
+::-moz-selection {
+  background: #ffb7b7; /* Firefox */
+}
+
 .section {
   padding-bottom: 60px;
   padding-top: 60px;

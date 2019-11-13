@@ -1,54 +1,52 @@
 <template>
-	<transition name="slide-fade">
-		<v-navigation-drawer app color="white" class>
-			<v-container column align-center>
-				<v-flex class="d-flex" justify-center>
-					<router-link to="/">
-						<img :src="logo" alt />
-					</router-link>
-				</v-flex>
-				<v-flex class="d-flex" justify-center>
-					<v-list class="pt-4 list">
-						<v-list-item v-for="(item, i) in menu" :key="i" :ripple="true" link :to="item.alias">
-							<v-list-item-icon>
-								<icon-base
-									v-if="item.icon"
-									class="icon"
-									:viewBox=" item.id == 1 ? '0 0 32 18' : '0 0 32 32' "
-									:icon-name="item.icon"
-								>
-									<component :is="item.icon"></component>
-								</icon-base>
-							</v-list-item-icon>
-							<v-list-item-content>
-								<v-list-item-title class="menu-title">{{ item.title }}</v-list-item-title>
-							</v-list-item-content>
-						</v-list-item>
-					</v-list>
-				</v-flex>
-				<v-flex class="d-flex" justify-center>
-					<div class="section-title mt-4">
-						<h3>Свяжитесь с нами</h3>
-						<div class="bar"></div>
-					</div>
-				</v-flex>
-				<v-flex class="d-flex" justify-center>
-					<v-btn
-						v-for="(item, i) in socials"
-						:key="i"
-						fab
-						color="primary--text"
-						rounded
-						class="ma-1 btn-social"
-						small
-						:to="item.link"
-					>
-						<v-icon>fab fa-{{item.name}}</v-icon>
-					</v-btn>
-				</v-flex>
-			</v-container>
-		</v-navigation-drawer>
-	</transition>
+	<v-navigation-drawer app color="black" class>
+		<v-container column align-center>
+			<v-flex class="d-flex" justify-center>
+				<router-link to="/">
+					<img :src="logo" alt />
+				</router-link>
+			</v-flex>
+			<v-flex class="d-flex" justify-center>
+				<v-list class="pt-4 list">
+					<v-list-item v-for="(item, i) in menu" :key="i" :ripple="true" link :to="item.alias">
+						<v-list-item-icon>
+							<icon-base
+								v-if="item.icon"
+								class="icon"
+								:viewBox=" item.id == 1 ? '0 0 32 18' : '0 0 32 32' "
+								:icon-name="item.icon"
+							>
+								<component :is="item.icon"></component>
+							</icon-base>
+						</v-list-item-icon>
+						<v-list-item-content>
+							<v-list-item-title class="menu-title">{{ item.title }}</v-list-item-title>
+						</v-list-item-content>
+					</v-list-item>
+				</v-list>
+			</v-flex>
+			<v-flex class="d-flex" justify-center>
+				<div class="section-title mt-4">
+					<h3>Свяжитесь с нами</h3>
+					<div class="bar"></div>
+				</div>
+			</v-flex>
+			<v-flex class="d-flex" justify-center>
+				<v-btn
+					v-for="(item, i) in socials"
+					:key="i"
+					fab
+					color="primary--text"
+					rounded
+					class="ma-1 btn-social"
+					small
+					:to="item.link"
+				>
+					<v-icon>fab fa-{{item.name}}</v-icon>
+				</v-btn>
+			</v-flex>
+		</v-container>
+	</v-navigation-drawer>
 </template>
 
 <script>
@@ -154,7 +152,7 @@
 		transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 	}
 	.slide-fade-enter, .slide-fade-leave-to
-																															/* .slide-fade-leave-active до версии 2.1.8 */ {
+																																		/* .slide-fade-leave-active до версии 2.1.8 */ {
 		transform: translateX(10px);
 		opacity: 0;
 	}

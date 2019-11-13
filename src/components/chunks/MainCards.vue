@@ -10,14 +10,16 @@
 				<v-col cols="10">
 					<v-row justify="center">
 						<v-col lg="4" xs="2" v-for="(item, i) in cards" :key="i">
-							<div class="single-services d-flex flex-column align-center justify-center">
-								<v-btn class="icon" outlined fab elevation="0" icon color="primary" x-large>
-									<v-icon class>far fa-address-card</v-icon>
-								</v-btn>
+							<router-link :to="item.alias">
+								<div class="single-services d-flex flex-column align-center justify-center">
+									<v-btn class="icon" outlined fab elevation="0" icon color="primary" x-large>
+										<v-icon class>far fa-address-card</v-icon>
+									</v-btn>
 
-								<h4>{{ item.title }}</h4>
-								<p>{{ item.subtitle }}</p>
-							</div>
+									<h4>{{ item.title }}</h4>
+									<p>{{ item.subtitle }}</p>
+								</div>
+							</router-link>
 						</v-col>
 					</v-row>
 				</v-col>
@@ -67,7 +69,7 @@
 		},
 		computed: {
 			cards() {
-				return this.$store.getters.cards;
+				return this.$store.getters.products;
 			}
 		}
 	};
@@ -76,13 +78,30 @@
 	.main-cards {
 		z-index: 1;
 		position: relative;
-		// background-color: #edf5ff;
-		background-image: url("../../assets/img/bg/bg6.png");
-		background-repeat: repeat;
-		background-position: left top;
+		// background-image: url("https://firebasestorage.googleapis.com/v0/b/apprint-1552339217465.appspot.com/o/products%2Fbg%2Fcta-bg-121cbe532ff449e99f866af90af0e84f.jpg?alt=media&token=9e5c4e6a-0ee6-4bce-9b61-0ec22fd2bfe8");
+		// background-position: center center;
+		// background-size: cover;
+		// background-attachment: fixed;
+		// background-repeat: no-repeat;
+
+		// &::before {
+		// 	content: "";
+		// 	position: absolute;
+		// 	z-index: -1;
+		// 	left: 0;
+		// 	top: 0;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	background: var(--v-primary-base);
+		// 	opacity: 0.87;
+		// }
+		a {
+			text-decoration: none;
+		}
 	}
 
 	.single-services {
+		position: relative;
 		background: var(--v-white-base);
 		min-height: 250px;
 		padding: 30px;
@@ -90,6 +109,22 @@
 		transition: 0.4s;
 		cursor: pointer;
 		transition: 0.4s;
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			background: #ffffff;
+			width: 96%;
+			opacity: 0.62;
+			height: 50%;
+			bottom: -6px;
+			left: 0;
+			right: 0;
+			margin: auto;
+			border-radius: 3px;
+			-webkit-transition: 0.4s;
+			transition: 0.4s;
+		}
 
 		&:hover {
 			transform: translateY(-8px);
