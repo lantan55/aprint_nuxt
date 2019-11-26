@@ -1,11 +1,13 @@
 <template>
 	<section class="main-banner section">
 		<v-container class="box" fill-height>
-			<v-layout text-center wrap align-center justify-center>
+			<v-layout text-center align-center justify-center>
 				<v-flex xs12 md6>
-					<h1 class="white--text">Срочная печать каталогов за 24 часа</h1>
-					<p class="white--text">Круглосуточное собственное производство</p>
-					<button class="btn btn-primary" elevation="0">Рассчитать</button>
+					<div class="wrap">
+						<h1>Срочная печать каталогов за 24 часа</h1>
+						<p>Круглосуточное собственное производство</p>
+						<button class="btn btn-primary" elevation="0">Рассчитать</button>
+					</div>
 				</v-flex>
 				<v-flex class="d-none d-sm-none d-md-flex" justify-center>
 					<v-layout justify-center>
@@ -58,9 +60,30 @@
 	}
 	.main-banner {
 		height: calc(100vh - 64px);
-		background: var(--v-primary-base);
+		background: var(--v-white-base);
 		position: relative;
 		z-index: 1;
+
+		.wrap {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			h1 {
+				font-size: 60px;
+				text-align: left;
+				line-height: 1.2em;
+			}
+			p {
+				font-size: 18px;
+				text-align: left;
+				margin-top: 30px;
+				margin-bottom: 35px;
+			}
+			.btn-primary {
+				width: 200px;
+				text-align: center;
+			}
+		}
 
 		.shape-1 {
 			position: absolute;
@@ -116,4 +139,3 @@
 		}
 	}
 </style>
-
